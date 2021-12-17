@@ -7,4 +7,5 @@ export const MainContainer = styled.main`
     text-align: center;
     position: relative;
     top: 12vh;
+    font-family: "Mohave", sans-serif;
 `;
