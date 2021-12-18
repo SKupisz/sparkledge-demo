@@ -14,6 +14,7 @@ export const NavbarContainer = styled(a.div)`
     left: 0vh;
     overflow-y: hidden;
     transition: height 0.4s;
+    z-index: 10;
 
     a{
         text-decoration: none;
