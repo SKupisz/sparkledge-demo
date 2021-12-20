@@ -5,8 +5,8 @@ export const NavbarContainer = styled(a.div)`
     width: calc(100% - 10px);
     padding: 0px 5px;
     text-align: center;
-    background: #111;
-    box-shadow: 0px 5px 7px #000;
+    background: rgba(230,230,230,1);
+    box-shadow: 0px 5px 7px rgba(0,0,0,.2);
     height: ${(props) => 
         props.opened === "true" ? "100vh" : "12vh"};
     position: fixed;
@@ -18,7 +18,7 @@ export const NavbarContainer = styled(a.div)`
 
     a{
         text-decoration: none;
-        color: rgba(240,240,240,.9);
+        color: rgba(34, 174, 255, 1);
     }
 
     @media screen and (min-width: 768px){
@@ -43,10 +43,10 @@ export const NavbarResponsiveSection = styled.section`
 export const NavbarIconContainer = styled.div`
     padding: 2px;
     border-radius: 10px;
-    background: rgba(0,0,0,.2);
+    background: rgba(240,240,240,.2);
     transition: all 0.4s;
     cursor: pointer;
-    color: rgba(240,240,240,.9);
+    color: rgba(34, 174, 255, 0.7);
     width: fit-content;
     height: fit-content;
     margin-left: auto;
@@ -102,9 +102,9 @@ export const NavbarElement = styled.div`
     font-size: 1.2em;
     letter-spacing: 0.09em;
     font-family: "Mohave";
-    text-shadow: 3px 3px 4px #000;
+    text-shadow: 3px 3px 4px rgba(0,0,0,.15);
     border-radius: 10px;
-    background: rgba(0,0,0,.8);
+    background: rgba(240,240,240,.2);
     transition: filter 0.4s;
     cursor: pointer;
     position: relative;

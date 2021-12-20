@@ -6,8 +6,8 @@ export const ShowingDocumentHeader = styled.header`
     text-align: center;
     font-size: 1.3em;
     letter-spacing: 0.07em;
-    color: rgba(240,240,240,.9);
-    text-shadow: 3px 3px 4px #000;
+    color: rgba(34, 174, 255, 0.9);
+    text-shadow: 3px 3px 4px rgba(0,0,0,.2);
     line-height: 1.1em;
     margin-bottom: 4vh;
     position: relative;
@@ -32,9 +32,9 @@ export const ShowingDocumentData = styled.div`
     padding: 5px;
     text-align: center;
     font-size: 0.7em;
-    color: rgba(240,240,240,.7);
+    color: rgba(34, 174, 255, 0.8);
     letter-spacing: 0.08em;
-    text-shadow: 3px 3px 4px #000;
+    text-shadow: 3px 3px 4px rgba(0,0,0,.2);
     margin-bottom: 5vh;
 
     @media screen and (min-width: 375px){
@@ -92,17 +92,16 @@ export const DocumentPreLoaderInner = styled.div`
 
 export const ShowingDocumentDisplay = styled.section`
     width: ${(props) => 
-        props.ispdf === "true" ? "fit-content" : "calc(70% - 22px)"};
+        props.ispdf === "true" ? "fit-content" : "calc(70% - 20px)"};
     padding: ${(props) => 
         props.ispdf === "true" ? "0px" : "10px"};
-    border-radius: 10px;
-    border: 1px solid #000;
-    box-shadow: 3px 3px 4px #000;
+    border-radius: 5px;
+    box-shadow: 3px 3px 4px rgba(0,0,0,.4);
     height: ${(props) => 
-        props.ispdf === "true" ? "fit-content" : "calc(70vh - 22px)"};
+        props.ispdf === "true" ? "fit-content" : "calc(70vh - 20px)"};
     margin-bottom: 4vh;
     text-align: center;
-    overflow-y: hidden;
+    overflow: hidden;
 `;
 
 export const ShowingDocumentMenu = styled.nav`
@@ -125,7 +124,7 @@ export const ShowingDocumentMenuIcon = styled.div`
     margin: 2vh 5px 0px;
     height: 6vh;
     color: ${(props) => 
-        props.aviable === "true" ? "rgba(240,240,240,.9)" : "rgba(240,240,240,.6)"};
+        props.aviable === "true" ? "rgba(34, 174, 255, 0.9)" : "rgba(34, 174, 255, 0.6)"};
     display: inline-block;
     vertical-align: top;
     cursor: pointer;
@@ -150,8 +149,8 @@ export const ShowingDocumentMenuPage = styled.div`
     text-align: center;
     font-size: 1.1em;
     letter-spacing: 0.07em;
-    color: rgba(240,240,240,.8);
-    text-shadow: 3px 3px 4px #000;
+    color: rgba(34, 174, 255, 0.7);
+    text-shadow: 3px 3px 4px rgba(0,0,0,.1);
     display: inline-block;
     vertical-align: top;
 

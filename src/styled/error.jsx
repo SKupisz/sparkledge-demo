@@ -6,8 +6,8 @@ export const ErrorHeader = styled.header`
     text-align: center;
     font-size: 1.3em;
     letter-spacing: 0.08em;
-    color: rgba(240,240,240,.8);
-    text-shadow: 3px 3px 4px #000;
+    color: rgba(34, 174, 255, 0.9);
+    text-shadow: 3px 3px 4px rgba(0,0,0,.2);
     margin-bottom: 7vh;
     position: relative;
     top: 3vh;
@@ -47,8 +47,8 @@ export const ErrorContent = styled.div`
     text-align: center;
     font-size: 1em;
     letter-spacing: 0.06em;
-    color: rgba(240,240,240,.8);
-    text-shadow: 3px 3px 4px #000;
+    color: rgba(34, 174, 255, 0.8);
+    text-shadow: 3px 3px 4px rgba(0,0,0,.1);
     line-height: 1.3em;
     display: inline-block;
     vertical-align: top;
@@ -71,7 +71,7 @@ export const ErrorContentCover = styled.div`
     margin-left: ${(props) => 
         props.margin ? props.margin : "0%"};
     height: 100%;
-    background: #222;
+    background: rgb(240,240,240);
     border-radius: 10px;
     transition: all 0.6s;
     position: relative;
