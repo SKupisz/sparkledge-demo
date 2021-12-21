@@ -5,6 +5,7 @@ import { MainContainer } from "../styled/main.jsx";
 
 import ShowingDocument from "./subpages/showingDocument.jsx";
 import LoginPanel from "./subpages/login.jsx";
+import MaterialsShowing from "./subpages/materials.jsx";
 import ErrorPage from "./subpages/errorPage.jsx";
 
 const Main = () => {
@@ -13,6 +14,7 @@ const Main = () => {
             <Route exact path = "/" element={<></>}/>
             <Route exact path = "/material" element={<ShowingDocument/>}/>
             <Route exact path = "/login" element={<LoginPanel/>}/>
+            <Route exact path = "/searcher" element={<MaterialsShowing/>}/>
             <Route path="*" element={<ErrorPage/>}/>
         </Routes>
     </MainContainer>
