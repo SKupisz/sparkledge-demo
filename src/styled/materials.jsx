@@ -24,6 +24,82 @@ export const MaterialsContainer = styled.section`
     }
 `;
 
+export const MaterialSearchContainer = styled.section`
+    width: calc(100% - 20px);
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 4vh;
+
+    @media screen and (min-width: 425px){
+        width: calc(80% - 20px);
+    }
+
+    @media screen and (min-width: 768px){
+        width: calc(60% - 20px);
+    }
+`;
+
+export const MaterialSearchInput = styled.input`
+    width: calc(70% - 10px);
+    height: calc(7vh - 20px) !important;
+    padding: 10px 5px;
+    display: inline-block;
+    vertical-align: top;
+    text-indent: 0.5em;
+    font-size: 0.8em;
+    letter-spacing: 0.06em;
+    border: none;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: -3px 3px 4px rgba(0,0,0,.2);
+    text-shadow: 3px 3px 4px rgba(0,0,0,.12);
+    color: rgba(34, 174, 255, 0.95);
+    background: rgba(230,230,230,.9);
+    transition: all 0.4s;
+
+    &:hover{
+        filter: brightness(70%);
+    }
+
+    &:focus{
+        outline: none;
+        filter: brightness(80%);
+    }
+
+    @media screen and (min-width: 375px){
+        font-size: 1em;
+        width: calc(80% - 10px);
+    }
+
+    @media screen and (min-width: 768px){
+        font-size: 1.2em;
+    }
+`;
+
+export const MaterialSearchButton = styled.button`
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+    text-align: center;
+    font-size: 2.2em;
+    background: transparent;
+    color: rgba(34, 174, 255, 0.95);
+    text-shadow: 3px 3px 4px rgba(0,0,0,.1);
+    cursor: pointer;
+    transition: all 0.4s;
+    display: inline-block;
+    vertical-align: top;
+
+    &:hover{
+        filter: brightness(70%);
+    }
+
+    @media screen and (min-width: 768px){
+        font-size: 2.4em;
+    }
+`;
+
 export const MaterialWidgetContainer = styled.div`
     width: calc(100% - 20px);
     height: fit-content;

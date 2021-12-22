@@ -14,7 +14,8 @@ const Main = () => {
             <Route exact path = "/" element={<></>}/>
             <Route exact path = "/material" element={<ShowingDocument/>}/>
             <Route exact path = "/login" element={<LoginPanel/>}/>
-            <Route exact path = "/searcher" element={<MaterialsShowing/>}/>
+            <Route exact path = "/searcher" element={<MaterialsShowing mode={1}/>}/>
+            <Route exact path = "/searcher/:q" element={<MaterialsShowing mode={2}/>}/>
             <Route path="*" element={<ErrorPage/>}/>
         </Routes>
     </MainContainer>
