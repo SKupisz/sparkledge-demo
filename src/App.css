@@ -46,6 +46,17 @@
   }
 }
 
+@keyframes WelcomePageHeader {
+  0%{
+    top: -2vh;
+    opacity: 0;
+  }
+  100%{
+    top: 0vh;
+    opacity: 1;
+  }
+}
+
 .pdf-loader{
   border: 10px solid transparent;
   border-radius: 50%;
