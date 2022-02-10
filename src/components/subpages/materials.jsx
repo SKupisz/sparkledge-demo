@@ -9,6 +9,7 @@ import { MaterialsContainer, MaterialSearchContainer, MaterialSearchInput, Mater
 import { ShowingDocumentHeader } from "../../styled/showingDocument.jsx";
 
 import MaterialWidget from "../support/materialWidget.jsx";
+import Footer from "../support/footer.jsx";
 
 const MaterialsShowing = ({mode=1}) => { // 1 - not searched, 2 - searched
 
@@ -38,7 +39,7 @@ const MaterialsShowing = ({mode=1}) => { // 1 - not searched, 2 - searched
 
     return <>
         <ShowingDocumentHeader className="block-center">
-            {dataStatus === -1 ? "Szukaj dokumentu" :"Wyniki wyszukiwania"}
+            {dataStatus === -1 ? "Szukaj dokumentu" : "Wyniki wyszukiwania"}
         </ShowingDocumentHeader>
         <MaterialSearchContainer className="block-center">
             <MaterialSearchInput type="text" placeholder="Wyszukaj..." name="p"
@@ -65,6 +66,7 @@ const MaterialsShowing = ({mode=1}) => { // 1 - not searched, 2 - searched
                 <MaterialWidget data={elem} color={"rgba(90,60,90,."+((ind % 2)+1)+")"}/>
             </Link> : <></>)}
         </MaterialsContainer>
+        <Footer/>
     </>
 };
 

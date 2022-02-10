@@ -77,7 +77,8 @@ export const MaterialSearchInput = styled.input`
 
 export const MaterialSearchButton = styled.button`
     width: fit-content;
-    height: fit-content;
+    height: calc(7vh - 10px);
+    line-height: calc(7vh - 10px);
     padding: 5px;
     border: none;
     border-radius: 0px 10px 10px 0px;
