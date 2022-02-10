@@ -5,7 +5,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 import { MaterialWidgetContainer, MaterialWidgetDataInfo, MaterialWidgetAudienceInfo, MaterialWidgetHeader,
     MaterialWidgetAuthor, MaterialWidgetCategoriesContainer, 
-    MaterialWidgetCategorie, MaterialWidgetData, MaterialWidgetDataSpan } from "../../styled/materials.jsx";
+    MaterialWidgetCategorie, MaterialWidgetData, MaterialWidgetDataSpan } from "../../styled/materialWidget.jsx";
 
 const MaterialWidget = ({color="rgba(230,230,230,.8)", data}) => {
 

@@ -9,7 +9,7 @@ export const MainContainer = styled.main`
     position: relative;
     top: 12vh;
     font-family: "Mohave", sans-serif;
-    overflow-x: hidden;
+    overflow: hidden;
 `;
 
 export const FooterWrapper = styled.footer`
