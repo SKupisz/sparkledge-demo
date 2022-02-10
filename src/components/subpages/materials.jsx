@@ -5,11 +5,15 @@ import FindInPageIcon from '@mui/icons-material/FindInPage';
 
 import { MaterialsContainer, MaterialSearchContainer, MaterialSearchInput, MaterialSearchButton,
     NoMaterialsBanner, NoMaterialsBannerHidder,
-    MaterialsPreLoader, MaterialsPreloaderElem, ThrivingContainer } from "../../styled/materials.jsx";
+    MaterialsPreLoader, MaterialsPreloaderElem, ThrivingContainer, 
+    SearcherWrapper, SearcherWrapperFilter } from "../../styled/materials.jsx";
 import { ShowingDocumentHeader } from "../../styled/showingDocument.jsx";
 
+import Welcome from "./welcome.jsx";
 import MaterialWidget from "../support/materialWidget.jsx";
 import Footer from "../support/footer.jsx";
+
+import SearchBackground from "../../assets/searcher_background_3.jpg";
 
 const MaterialsShowing = ({mode=1}) => { // 1 - not searched, 2 - searched
 
@@ -78,43 +82,49 @@ const MaterialsShowing = ({mode=1}) => { // 1 - not searched, 2 - searched
     }, []);
 
     return <>
-        <ShowingDocumentHeader className="block-center">
-            {dataStatus === -1 ? "Szukaj dokumentu" : "Wyniki wyszukiwania"}
-        </ShowingDocumentHeader>
-        <MaterialSearchContainer className="block-center">
-            <MaterialSearchInput type="text" placeholder="Wyszukaj..." name="p"
-                value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>
-            <a href= {"/searcher/"+searchQuery}>
-                <MaterialSearchButton type="button">
-                    <FindInPageIcon style={{color: "inherit", fontSize: "inherit"}}/>
-                </MaterialSearchButton>
-            </a>
-        </MaterialSearchContainer>
-        <MaterialsContainer className="block-center">
-            {mode === 1 ? <>
-                <NoMaterialsBanner className="block-center">
-                    Najpopularniejsze materiały
-                </NoMaterialsBanner>
-                <ThrivingContainer className="block-center">
-                {TempThrivingData.map((elem, ind) => <Link to = {elem["link"]} key = {"thriving-"+ind}>
-                    <MaterialWidget data={elem} color={"rgba(90,60,90,."+((ind % 2)+1)+")"}/>
-                </Link>)}
-                </ThrivingContainer>
-            </> : dataStatus === 0 ? <MaterialsPreLoader className="block-center">
-                <MaterialsPreloaderElem/>
-                <MaterialsPreloaderElem/>
-                <MaterialsPreloaderElem/>
-            </MaterialsPreLoader>: dataStatus === 2 ? <>
-                <NoMaterialsBanner className="block-center">
-                    Brak wyników wyszukiwania. Spróbuj zmienić wyszukiwaną frazę
-                </NoMaterialsBanner>
-                <NoMaterialsBannerHidder className="block-center" height = {dataStatus === 2 ? "0em" : "3em"} 
-                    top = {dataStatus === 2 ? "0em" : "-3em"}/>
-            </>
-            : searchResult.map((elem, ind) => elem["isRendered"] === true ? <Link to = {elem["link"]} key = {"material-"+ind}>
-                <MaterialWidget data={elem} color={"rgba(90,60,90,."+((ind % 2)+1)+")"}/>
-            </Link> : <></>)}
-        </MaterialsContainer>
+        <SearcherWrapper className="block-center" background={SearchBackground}>
+            <SearcherWrapperFilter className="block-center">
+                <ShowingDocumentHeader className="block-center">
+                    {dataStatus === -1 ? "Szukaj dokumentu" : "Wyniki wyszukiwania"}
+                </ShowingDocumentHeader>
+                <MaterialSearchContainer className="block-center">
+                    <MaterialSearchInput type="text" placeholder="Wyszukaj..." name="p"
+                        value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>
+                    <a href= {"/searcher/"+searchQuery}>
+                        <MaterialSearchButton type="button">
+                            <FindInPageIcon style={{color: "inherit", fontSize: "inherit"}}/>
+                        </MaterialSearchButton>
+                    </a>
+                </MaterialSearchContainer>
+                <MaterialsContainer className="block-center">
+                    {mode === 1 ? <>
+                        <ThrivingContainer className="block-center">
+                            <NoMaterialsBanner className="block-center">
+                                Najpopularniejsze materiały
+                            </NoMaterialsBanner>
+                            {TempThrivingData.map((elem, ind) => <Link to = {elem["link"]} key = {"thriving-"+ind}>
+                                <MaterialWidget data={elem} color={"rgba(240,240,240,."+((ind % 2)+6)+")"}/>
+                            </Link>)}
+                        </ThrivingContainer>
+                    </> : dataStatus === 0 ? <MaterialsPreLoader className="block-center">
+                        <MaterialsPreloaderElem/>
+                        <MaterialsPreloaderElem/>
+                        <MaterialsPreloaderElem/>
+                    </MaterialsPreLoader>: dataStatus === 2 ? <>
+                        <NoMaterialsBanner className="block-center">
+                            Brak wyników wyszukiwania. Spróbuj zmienić wyszukiwaną frazę
+                        </NoMaterialsBanner>
+                        <NoMaterialsBannerHidder className="block-center" height = {dataStatus === 2 ? "0em" : "3em"} 
+                            top = {dataStatus === 2 ? "0em" : "-3em"}/>
+                    </>
+                    : searchResult.map((elem, ind) => elem["isRendered"] === true ? <Link to = {elem["link"]} key = {"material-"+ind}>
+                        <MaterialWidget data={elem} color={"rgba(90,60,90,."+((ind % 2)+1)+")"}/>
+                    </Link> : <></>)}
+                </MaterialsContainer>
+            </SearcherWrapperFilter>
+        </SearcherWrapper>
+        {mode === 1 ? <Welcome mode={2}/> : <></>}
+        
         <Footer/>
     </>
 };

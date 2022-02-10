@@ -25,6 +25,12 @@ const Footer = () => {
                 to: "/login",
                 content: "Panel logowania"
             }
+        ],
+        [
+            {
+                to: "https://www.vecteezy.com/free-vector/education",
+                content: "Education Vectors by Vecteezy"
+            }
         ]
     ]
 
@@ -32,11 +38,15 @@ const Footer = () => {
         <FooterColumnsWrapper className="block-center">
             {FooterList.map((elem, ind) => <FooterColumn key={"main-footer-column-"+ind}>
                 {elem.map((button, btnInd) => 
+                button["to"][0] === "/" ? 
                 <Link to = {button["to"]} key={"column-"+ind+"-button-"+btnInd}>
                     <FooterColumnElem className="block-center">
                         {button["content"]}
                     </FooterColumnElem>
-                </Link>)}
+                </Link> : <a href = {button["to"]} key={"column-"+ind+"-button-"+btnInd} target="_blank">
+                    <FooterColumnElem className="block-center">
+                        {button["content"]}
+                    </FooterColumnElem></a>)}
             </FooterColumn>)}
         </FooterColumnsWrapper>
     </FooterWrapper>;

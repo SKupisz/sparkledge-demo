@@ -14,7 +14,8 @@ export const MainContainer = styled.main`
 
 export const FooterWrapper = styled.footer`
     width: calc(100% - 20px);
-    height: calc(40vh - 40px);
+    min-height: calc(40vh - 40px);
+    height: fit-content;
     padding: 20px 10px;
     text-align: center;
     box-shadow: 0px -4px 4px rgba(20,20,20,.2);

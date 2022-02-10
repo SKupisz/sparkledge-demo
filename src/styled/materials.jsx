@@ -1,6 +1,21 @@
 import styled from "styled-components";
 import {animated as a} from "react-spring";
 
+export const SearcherWrapper = styled.main`
+    width: 100%;
+    height: fit-content;
+    background: ${(props) => 
+        props.background ? `url(${props.background});` : "none"};
+    background-size: cover;
+`;
+
+export const SearcherWrapperFilter = styled.div`
+    width: inherit;
+    height: inherit;
+    position: relative;
+    background: rgba(240,240,240,.7);
+`;
+
 export const MaterialsContainer = styled.section`
     width: calc(100% - 10px);
     padding: 5px;
@@ -140,7 +155,7 @@ export const MaterialsPreloaderElem = styled(a.div)`
     height: 10px;
     border-radius: 50%;
     background: ${(props) => 
-        props.background ? props.background : "rgba(90,60,90.6)"};
+        props.background ? props.background : "rgba(90,60,90,.6)"};
     display: inline-block;
     vertical-align: top;
     margin: 0px 5px;
@@ -164,5 +179,5 @@ export const MaterialsPreloaderElem = styled(a.div)`
 export const ThrivingContainer = styled.div`
     width: 100%;
     text-align: center;
-    margin-bottom: 16vh;
+    margin-bottom: 6vh;
 `;
