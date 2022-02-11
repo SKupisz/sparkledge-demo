@@ -58,7 +58,7 @@ const MaterialsShowing = ({mode=1}) => { // 1 - not searched, 2 - searched
     ];
 
     const [searchQuery, setSearchQuery] = useState("");
-    const [searchResult, setSearchResult] = useState([]);
+    const [searchResult, setSearchResult] = useState(null);
     const [dataStatus, setDataStatus] = useState(-1); // -1, only searching 0 - loading, 1 - data loaded, 2 - no data or data error
     const {q} = useParams();
 
@@ -103,7 +103,7 @@ const MaterialsShowing = ({mode=1}) => { // 1 - not searched, 2 - searched
                                 Najpopularniejsze materiały
                             </NoMaterialsBanner>
                             {TempThrivingData.map((elem, ind) => <Link to = {elem["link"]} key = {"thriving-"+ind}>
-                                <MaterialWidget data={elem} color={"rgba(240,240,240,."+((ind % 2)+6)+")"}/>
+                                <MaterialWidget ismajor={true} data={elem} color={"rgba(240,240,240,."+((ind % 2)+6)+")"}/>
                             </Link>)}
                         </ThrivingContainer>
                     </> : dataStatus === 0 ? <MaterialsPreLoader className="block-center">
@@ -117,9 +117,14 @@ const MaterialsShowing = ({mode=1}) => { // 1 - not searched, 2 - searched
                         <NoMaterialsBannerHidder className="block-center" height = {dataStatus === 2 ? "0em" : "3em"} 
                             top = {dataStatus === 2 ? "0em" : "-3em"}/>
                     </>
-                    : searchResult.map((elem, ind) => elem["isRendered"] === true ? <Link to = {elem["link"]} key = {"material-"+ind}>
-                        <MaterialWidget data={elem} color={"rgba(90,60,90,."+((ind % 2)+1)+")"}/>
+                    : <ThrivingContainer className="block-center" mbottom={"10vh"}>{searchResult === null ? <></> : 
+                        searchResult["exact"].map((elem, ind) => elem["isRendered"] === true ? <Link to = {elem["link"]} key = {"material-"+ind}>
+                        <MaterialWidget ismajor={true} data={elem} color={"rgba(90,60,90,."+((ind % 2)+1)+")"}/>
                     </Link> : <></>)}
+                    {searchResult === null ? <></> : searchResult["otherMatches"].map((elem, ind) => elem["isRendered"] === true ? <Link to = {elem["link"]} key = {"material-"+ind}>
+                        <MaterialWidget ismajor={false} data={elem} color={"rgba(90,60,90,."+((ind % 2)+1)+")"}/>
+                    </Link> : <></>)}
+                    </ThrivingContainer>}
                 </MaterialsContainer>
             </SearcherWrapperFilter>
         </SearcherWrapper>

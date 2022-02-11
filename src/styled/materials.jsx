@@ -143,7 +143,8 @@ export const MaterialsPreLoader = styled.div`
     padding: 10px;
     text-align: center;
     position: relative;
-    top: 14vh;
+    top: 8vh;
+    margin-bottom: 38vh;
 
     animation-name: MaterialsContainerLoaderAnim;
     animation-iteration-count: infinite;
@@ -179,5 +180,6 @@ export const MaterialsPreloaderElem = styled(a.div)`
 export const ThrivingContainer = styled.div`
     width: 100%;
     text-align: center;
-    margin-bottom: 6vh;
+    margin-bottom: ${(props) => 
+        props.mbottom ? props.mbottom : "6vh"};
 `;

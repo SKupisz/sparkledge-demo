@@ -4,7 +4,8 @@ import {animated as a} from "react-spring";
 export const MaterialWidgetContainer = styled.div`
     width: calc(100% - 20px);
     height: fit-content;
-    min-height: calc(40vh - 20px);
+    ${(props) => 
+        props.ismajor ? `min-height: calc(40vh - 20px);` : ""}
     padding: 10px;
     border-radius: 10px;
     box-shadow: 3px 3px 4px rgba(0,0,0,.25);
@@ -64,6 +65,8 @@ export const MaterialWidgetHeader = styled.header`
     width: calc(100% - 10px);
     padding: 5px;
     font-size: 1.1em;
+    ${(props) => 
+        props.ismajor ? "" : `margin-top: 1vh;`}
     letter-spacing: 0.07em;
     color: rgba(34, 174, 255, 0.95);
     text-shadow: 3px 3px 4px rgba(0,0,0,.15);
@@ -79,12 +82,12 @@ export const MaterialWidgetHeader = styled.header`
     }
 
     @media screen and (min-width: 630px){
-        font-size: 1.4em;
-        text-indent: 1.2em;
+        ${(props) => props.ismajor ? `font-size: 1.4em;
+        text-indent: 1.2em;` : ""}
     }
 
     @media screen and (min-width: 1024px){
-        font-size: 1.6em;
+        ${(props) => props.ismajor ? `font-size: 1.6em;` : ""}
     }
 `;
 
@@ -152,7 +155,8 @@ export const MaterialWidgetCategorie = styled.div`
 `;
 
 export const MaterialWidgetData = styled.div`
-    width: calc(33% - 20px);
+    width: ${(props) => 
+        props.ismajor ? `calc(33% - 20px)` : `fit-content`};
     padding: 5px;
     color: rgba(34, 174, 255, 0.9);
     text-shadow: 3px 3px 4px rgba(0,0,0,.1);
@@ -172,24 +176,28 @@ export const MaterialWidgetData = styled.div`
     }
 
     @media screen and (min-width: 425px){
-        width: calc(100% - 10px);
-        display: block;
-        margin: 0px auto;
+        ${(props) => 
+            props.ismajor ? `width: calc(100% - 10px);`: ""}
         margin-bottom: ${(props) => 
             props.isdate ? "3vh" : "1vh"};
     }
 
     @media screen and (min-width: 650px){
-        font-size: 1em;
+        ${(props) => 
+            props.ismajor ? `font-size: 1em;`: ""}
     }
     
     @media screen and (min-width: 1024px){
-        font-size: 1.2em;
+        ${(props) => 
+            props.ismajor ? `font-size: 1.2em;`: ""}
     }
 
     @media screen and (min-width: 1440px){
-        font-size: 1.3em;
-        width: calc(90% - 10px);
+        ${(props) => 
+            props.ismajor ? `
+            font-size: 1.3em;
+            width: calc(90% - 10px);
+        ` : ""}
     }
 `;
 

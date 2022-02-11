@@ -7,34 +7,38 @@ import { MaterialWidgetContainer, MaterialWidgetDataInfo, MaterialWidgetAudience
     MaterialWidgetAuthor, MaterialWidgetCategoriesContainer, 
     MaterialWidgetCategorie, MaterialWidgetData, MaterialWidgetDataSpan } from "../../styled/materialWidget.jsx";
 
-const MaterialWidget = ({color="rgba(230,230,230,.8)", data}) => {
+const MaterialWidget = ({ismajor=true, color="rgba(230,230,230,.8)", data}) => {
 
     const categoriesData = data["categories"].split(", ");
 
-    return <MaterialWidgetContainer className="block-center" background={color}>
+    return <MaterialWidgetContainer className="block-center" background={color} ismajor={ismajor}>
         <MaterialWidgetDataInfo>
-            <MaterialWidgetHeader>
+            <MaterialWidgetHeader ismajor={ismajor}>
                 {data["title"].length > 25 ? data["title"].substring(0,25)+"..." : data["title"]}
             </MaterialWidgetHeader>
-            <MaterialWidgetAuthor>
-                {data["author"]}
-            </MaterialWidgetAuthor>
-            <MaterialWidgetCategoriesContainer className="block-center">
-                {categoriesData.map((elem, ind) => <MaterialWidgetCategorie key={data["id"]+"-categorie-"+ind}>
-                    {elem}
-                </MaterialWidgetCategorie>)}
-            </MaterialWidgetCategoriesContainer>
+            {
+                ismajor === true ? <>
+                    <MaterialWidgetAuthor>
+                        {data["author"]}
+                    </MaterialWidgetAuthor>
+                    <MaterialWidgetCategoriesContainer className="block-center">
+                        {categoriesData.map((elem, ind) => <MaterialWidgetCategorie key={data["id"]+"-categorie-"+ind}>
+                            {elem}
+                        </MaterialWidgetCategorie>)}
+                    </MaterialWidgetCategoriesContainer>
+                </> : <></>
+            }
         </MaterialWidgetDataInfo>
         <MaterialWidgetAudienceInfo>
-            <MaterialWidgetData className="block-center" isdate="true">
+            <MaterialWidgetData className={ismajor ? "block-center": ""} ismajor={ismajor} isdate="true">
                 <CalendarTodayIcon style={{fontSize: "inherit"}}/>
                 <MaterialWidgetDataSpan>{data["publishedOn"]}</MaterialWidgetDataSpan>
             </MaterialWidgetData>
-            <MaterialWidgetData className="block-center">
+            <MaterialWidgetData className={ismajor ? "block-center": ""} ismajor={ismajor}>
                 <VisibilityIcon style={{fontSize: "inherit"}}/>
                 <MaterialWidgetDataSpan>{data["stats"]["views"]}</MaterialWidgetDataSpan>
             </MaterialWidgetData>
-            <MaterialWidgetData className="block-center">
+            <MaterialWidgetData className={ismajor ? "block-center": ""} ismajor={ismajor}>
                 <FavoriteIcon style={{fontSize: "inherit"}}/>
                 <MaterialWidgetDataSpan>{data["stats"]["likes"]}</MaterialWidgetDataSpan>
             </MaterialWidgetData>

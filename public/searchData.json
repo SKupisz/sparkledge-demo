@@ -1,4 +1,4 @@
-[{
+{"exact" : [{
     "id": "khausd819191",
     "title": "Doktorologia stosowana",
     "author": "Jan Kowalski",
@@ -10,4 +10,29 @@
         "likes": 64
     },
     "isRendered": true
-}]
+}],
+"otherMatches": [{
+    "id": "mbjgui7896",
+    "title": "Podstawy matematyki dyskretnej",
+    "author": "Adam Galan",
+    "link": "/material",
+    "categories": "grafy, matematyka dyskretna, podstawy matematyki dyskretnej, matematyka stosowana",
+    "publishedOn": "10/11/2021",
+    "stats": {
+        "views": 1869,
+        "likes": 390
+    },
+    "isRendered": true
+},{
+    "id": "mbjgui7896",
+    "title": "Podstawy analizy matematycznej",
+    "author": "Jan Spalin",
+    "link": "/material",
+    "categories": "analiza matematyczna, podstawy analizy matematycznej",
+    "publishedOn": "04/11/2021",
+    "stats": {
+        "views": 1869,
+        "likes": 390
+    },
+    "isRendered": true
+}]}
