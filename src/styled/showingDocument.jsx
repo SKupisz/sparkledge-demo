@@ -7,7 +7,7 @@ export const ShowingDocumentHeader = styled.header`
     font-size: 1.3em;
     letter-spacing: 0.07em;
     color: rgba(34, 174, 255, 0.9);
-    text-shadow: 3px 3px 4px rgba(0,0,0,.15);
+    text-shadow: 3px 3px 4px rgba(0,0,0,.1);
     line-height: 1.1em;
     margin-bottom: 4vh;
     position: relative;
@@ -34,7 +34,7 @@ export const ShowingDocumentData = styled.div`
     font-size: 0.7em;
     color: rgba(34, 174, 255, 0.8);
     letter-spacing: 0.08em;
-    text-shadow: 3px 3px 4px rgba(0,0,0,.2);
+    text-shadow: 3px 3px 4px rgba(0,0,0,.1);
     margin-bottom: 5vh;
 
     @media screen and (min-width: 375px){

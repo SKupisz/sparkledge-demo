@@ -1,11 +1,13 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 
+
 import { NavbarContainer, NavbarResponsiveSection, NavbarIconContainer,
-    NavbarAligningSection, NavbarElement, NavbarMainSection } from "../styled/navbar.jsx";
+    NavbarAligningSection, NavbarMainSection } from "../styled/navbar.jsx";
 
 import NavbarLinksRendering from "./support/NavbarLinksRendering.jsx";
+
+import MainLogo from "../assets/scriptshare_logo.png";
 
 const Navbar = () => {
 
@@ -15,20 +17,24 @@ const Navbar = () => {
         leftAlign: [
             {
                 to: "/",
-                content: "ScriptShare"
+                isImage: true,
+                content: MainLogo
             },
             {
                 to: "/searcher",
+                isImage: false,
                 content: "Wyszukiwarka"
             },
             {
                 to: "/material",
+                isImage: false,
                 content: "Materiał"
             }
         ],
         rightAlign: [
             {
                 to: "/login",
+                isImage: false,
                 content: "Zaloguj"
             }
         ]

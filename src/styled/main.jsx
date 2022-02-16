@@ -62,7 +62,7 @@ export const FooterColumnElem = styled.div`
     font-size: 0.9em;
     letter-spacing: 0.07em;
     color: rgba(34,174,255,0.9);
-    text-shadow: 3px 3px 4px rgba(0,0,0,.1);
+    text-shadow: 3px 3px 4px rgba(0,0,0,.07);
 
     &:hover{
         filter: brightness(70%);
@@ -80,4 +80,9 @@ export const FooterColumnElem = styled.div`
         width: calc(90% - 10px);
         font-size: 1.4em;
     }
+`;
+
+export const FooterImage = styled.img`
+    width: inherit;
+    height: auto;
 `;

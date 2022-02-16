@@ -6,7 +6,7 @@ export const NavbarContainer = styled(a.div)`
     padding: 0px 5px;
     text-align: center;
     background: rgba(230,230,230,1);
-    box-shadow: 0px 5px 7px rgba(0,0,0,.2);
+    box-shadow: 0px 5px 7px rgba(0,0,0,.15);
     height: ${(props) => 
         props.opened === "true" ? "100vh" : "12vh"};
     position: fixed;
@@ -102,7 +102,7 @@ export const NavbarElement = styled.div`
     font-size: 1.2em;
     letter-spacing: 0.09em;
     font-family: "Mohave";
-    text-shadow: 3px 3px 4px rgba(0,0,0,.15);
+    text-shadow: 3px 3px 4px rgba(0,0,0,.1);
     border-radius: 10px;
     background: rgba(240,240,240,.2);
     transition: filter 0.4s;
@@ -128,7 +128,23 @@ export const NavbarElement = styled.div`
         padding: 10px 30px;
         width: fit-content;
         display: inline-block;
-        vertical-align: center;
+        vertical-align: top;
         margin: 0px 5px;
+    }
+`;
+
+export const NavbarImage = styled.img`
+    height: 5vh;
+    margin-top: 5vh;
+    width: auto;
+
+    @media screen and (min-width: 320px){
+        height: 9vh;
+        margin-top: 3vh;
+    }
+
+    @media screen and (min-width: 375px){
+        height: inherit;
+        margin-top: 0vh;
     }
 `;

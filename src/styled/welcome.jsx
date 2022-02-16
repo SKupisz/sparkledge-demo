@@ -32,7 +32,7 @@ export const WelcomeHeader = styled.header`
     font-size: 1em;
     letter-spacing: 0.06em;
     color: rgba(34, 174, 255, 0.95);
-    text-shadow: 3px 3px 4px rgba(0,0,0,.1);
+    text-shadow: 3px 3px 4px rgba(0,0,0,.07);
     position: relative;
     top: 5vh;
     margin-bottom: 9vh;
@@ -71,7 +71,7 @@ export const WelcomeDescription = styled(a.section)`
     width: calc(100% - 20px);
     padding: 10px;
     color: rgba(34, 174, 255, 0.9);
-    text-shadow: 3px 3px 4px rgba(0,0,0,.1);
+    text-shadow: 3px 3px 4px rgba(0,0,0,.07);
     font-size: 0.9em;
     letter-spacing: 0.06em;
     line-height: 1.3em;
