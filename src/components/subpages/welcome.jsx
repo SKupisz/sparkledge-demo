@@ -11,12 +11,12 @@ const Welcome = ({mode=1}) => { // 1 - used as a welcome page, 2 - used as a par
 
     const [isLoaded, toggleIsLoaded] = useState(false);
 
-    const TitleSplitter = "ScriptShare - jeden portal, by rządzić wszystkimi notatkami".split(" ").map((elem, ind) => 
+    const TitleSplitter = "Sparkledge - jeden portal, by rządzić wszystkimi notatkami".split(" ").map((elem, ind) => 
     <WelcomeHeaderPart key={"welcome-part-"+ind} delay={ind}>
         {elem}
     </WelcomeHeaderPart>);
 
-    const Description = "Scriptshare to unikatowe miejsce, gdzie możesz się dzielić swoją wiedzą ze społecznością akademicką. W naszej bazie znajdziesz materiały do nauki publikowane zarówno przez studentów, jak i wykładowców - wystarczy się zalogować i nauka stoi otworem.";
+    const Description = "Sparkledge to unikatowe miejsce, gdzie możesz się dzielić swoją wiedzą ze społecznością akademicką. W naszej bazie znajdziesz materiały do nauki publikowane zarówno przez studentów, jak i wykładowców - wystarczy się zalogować i nauka stoi otworem.";
 
     useEffect(() => {
         setTimeout(() => toggleIsLoaded(!isLoaded), 400);

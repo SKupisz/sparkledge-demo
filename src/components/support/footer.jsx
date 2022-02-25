@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FooterWrapper, FooterColumnsWrapper, FooterColumn, 
     FooterColumnElem, FooterImage } from "../../styled/main.jsx";
 
-import MainLogo from "../../assets/scriptshare_logo.png";
+import MainLogo from "../../assets/sparkledge_logo.png";
 
 const Footer = () => {
 

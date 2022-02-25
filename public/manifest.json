@@ -1,19 +1,19 @@
 {
-  "short_name": "ScriptShare",
-  "name": "ScriptShare learning app",
+  "short_name": "Sparkledge",
+  "name": "Sparkledge learning app",
   "icons": [
     {
-      "src": "scriptshare_logo.png",
+      "src": "sparkledge_logo.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "scriptshare_logo.png",
+      "src": "sparkledge_logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "scriptshare_logo.png",
+      "src": "sparkledge_logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }

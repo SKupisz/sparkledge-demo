@@ -7,7 +7,7 @@ import { NavbarContainer, NavbarResponsiveSection, NavbarIconContainer,
 
 import NavbarLinksRendering from "./support/NavbarLinksRendering.jsx";
 
-import MainLogo from "../assets/scriptshare_logo.png";
+import MainLogo from "../assets/sparkledge_logo.png";
 
 const Navbar = () => {
 
